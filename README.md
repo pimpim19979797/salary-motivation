@@ -18,5 +18,5 @@ https://pimpim19979797.github.io/rixinyueyi/privacy.html
 页面中的公开联系邮箱已设置为：
 
 ```text
-rixinyueyi.support@gmail.com
+blakeroy@163.com
 ```
