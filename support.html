@@ -1,160 +1,136 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>薪动力 / 薪動力 / Salary Motivation Support</title>
+  <meta name="color-scheme" content="light dark">
+  <title>Support — My Workday: Pay Widget</title>
   <style>
     :root {
-      --bg: #fff6e4;
-      --panel: #fffdf8;
-      --text: #151923;
-      --muted: #4b5563;
-      --accent: #f59e0b;
-      --line: rgba(92, 64, 28, .16);
+      --bg: #f7f5ef;
+      --surface: #ffffff;
+      --text: #171918;
+      --muted: #62665f;
+      --accent: #138f7b;
+      --border: #deddd7;
+      --notice: #fff4cf;
     }
-    * {
-      box-sizing: border-box;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0d0d;
+        --surface: #181a19;
+        --text: #f5f5f1;
+        --muted: #a9ada7;
+        --accent: #42c7ae;
+        --border: #30332f;
+        --notice: #382f12;
+      }
     }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 88% 12%, rgba(255, 210, 120, .55), transparent 30%),
-        linear-gradient(180deg, #fff8ea 0%, var(--bg) 100%);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    main {
-      width: min(920px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-    .panel {
-      background: rgba(255, 253, 248, .94);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: 0 18px 50px rgba(116, 79, 24, .12);
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(30px, 6vw, 42px);
-      line-height: 1.18;
-      letter-spacing: 0;
-    }
-    h2 {
-      margin: 42px 0 8px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-      font-size: 25px;
-    }
-    h3 {
-      margin-top: 28px;
-      font-size: 19px;
-    }
-    p, li {
-      font-size: 16px;
-      color: var(--muted);
-    }
-    a {
-      color: #b45309;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .lang-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 24px 0 8px;
-    }
-    .lang-nav a {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 14px;
-      background: #fff3d4;
-      color: #7c2d12;
-    }
-    .contact {
-      margin-top: 18px;
-      padding: 16px 18px;
+    main { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    header { margin-bottom: 28px; }
+    .eyebrow { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.08; margin: 8px 0 10px; letter-spacing: -.03em; }
+    h2 { margin: 34px 0 10px; font-size: 22px; line-height: 1.25; }
+    h3 { margin: 24px 0 6px; font-size: 18px; line-height: 1.3; }
+    p, li { color: var(--muted); }
+    strong { color: var(--text); }
+    a { color: var(--accent); }
+    .summary, .notice {
+      padding: 18px 20px;
+      border: 1px solid var(--border);
       border-radius: 16px;
-      background: #fff3d4;
-      color: #62421b;
+      background: var(--surface);
     }
-    .footer {
-      margin-top: 28px;
-    }
+    .notice { background: var(--notice); margin-top: 20px; }
+    .summary p, .notice p { margin: 0; }
+    ul, ol { padding-left: 22px; }
+    footer { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); }
+    nav { margin-top: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
   </style>
 </head>
 <body>
-  <main>
-    <article class="panel">
-      <h1>薪动力 / 薪動力 / Salary Motivation Support</h1>
-      <p>本页面包含简体中文、繁體中文和 English 三个版本。This page includes Simplified Chinese, Traditional Chinese, and English versions.</p>
-      <p class="contact">Support email: <a href="mailto:blakeroy@163.com">blakeroy@163.com</a></p>
-      <nav class="lang-nav" aria-label="Language navigation">
-        <a href="#zh-hans">简体中文</a>
-        <a href="#zh-hant">繁體中文</a>
-        <a href="#en">English</a>
-      </nav>
+<main>
+  <header>
+    <div class="eyebrow">My Workday: Pay Widget</div>
+    <h1>Support</h1>
+    <p>Support information last updated: July 18, 2026</p>
+    <nav aria-label="Legal and support links">
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </header>
 
-      <section id="zh-hans" lang="zh-CN">
-        <h2>简体中文</h2>
-        <p>如果你在使用薪动力时遇到问题，或希望反馈建议，请通过上方邮箱联系我们。</p>
+  <section class="summary" aria-label="Contact support">
+    <p><strong>Need help or want to share feedback?</strong><br>Email <a href="mailto:blakeroy@163.com">blakeroy@163.com</a>. We aim to respond as soon as reasonably possible.</p>
+  </section>
 
-        <h3>常见问题</h3>
-        <p><strong>1. 小组件没有刷新怎么办？</strong></p>
-        <p>请打开 App，确认月薪、计薪天数和上下班时间设置正确，然后点击“保存并刷新小组件”。如果仍未更新，可以尝试移除小组件后重新添加。</p>
+  <h2>About the App</h2>
+  <p>My Workday: Pay Widget is an iOS 17+ workday companion that turns your work schedule and compensation settings into estimated earnings progress, payday countdowns, Home Screen widgets, and optional work-mood check-ins.</p>
 
-        <p><strong>2. App 会上传我的工资数据吗？</strong></p>
-        <p>不会。你的月薪、时间设置、计时数据和整蛊计数仅保存在设备本地，用于 App 和小组件展示。</p>
+  <h2>Getting started</h2>
+  <ol>
+    <li>Open <strong>Today</strong> and use the menu in the upper-right corner to configure your compensation, typical work schedule, and payday schedule.</li>
+    <li>Open <strong>Widget Studio</strong> to choose an Earnings, Payday, or Work Mood widget style and customize the available colors, typography, and size.</li>
+    <li>Tap <strong>Save &amp; Apply</strong>, then add My Workday: Pay Widget from the iOS Home Screen widget gallery.</li>
+  </ol>
 
-        <p><strong>3. 为什么工资进度和实际到账不完全一致？</strong></p>
-        <p>App 根据你输入的月薪、每月计薪天数和工作时间进行估算，结果用于提供可视化参考，不代表真实工资发放记录。</p>
+  <h2>Frequently asked questions</h2>
 
-        <p><strong>4. 以后会加入更多小组件皮肤吗？</strong></p>
-        <p>我们计划在后续版本中加入更多可选的小组件样式。核心工资进度功能会保持可用。</p>
-      </section>
+  <h3>Why has my widget not refreshed?</h3>
+  <ol>
+    <li>Open the App and confirm your schedule and widget settings.</li>
+    <li>Return to the widget editor and tap <strong>Save &amp; Apply</strong>.</li>
+    <li>Wait briefly for iOS to refresh the widget. Widget refresh timing is controlled by iOS and may not be immediate.</li>
+    <li>If the widget still shows old content, remove it from the Home Screen and add it again.</li>
+  </ol>
 
-      <section id="zh-hant" lang="zh-Hant">
-        <h2>繁體中文</h2>
-        <p>如果你在使用薪動力時遇到問題，或希望提供建議，請透過上方電子郵件與我們聯絡。</p>
+  <h3>Why does the earnings amount differ from my paycheck?</h3>
+  <p>Earnings shown by the App are estimates based on the compensation and schedule information you enter. They may not include taxes, deductions, benefits, bonuses, payroll rounding, unpaid time, or employer-specific rules. The App is a personal visualization tool and is not a payroll record, pay stub, accounting service, or financial adviser.</p>
 
-        <h3>常見問題</h3>
-        <p><strong>1. 小工具沒有更新怎麼辦？</strong></p>
-        <p>請打開 App，確認月薪、計薪天數和上下班時間設定正確，然後點選「保存並刷新小組件」。如果仍未更新，可以嘗試移除小工具後重新加入。</p>
+  <h3>How is the payday countdown calculated?</h3>
+  <p>The App uses the pay frequency and next payday you configure, together with the date, time zone, and calendar on your device. If the countdown looks incorrect, check the payday schedule in the Today screen menu and confirm that your iPhone date and time zone are correct.</p>
 
-        <p><strong>2. App 會上傳我的工資資料嗎？</strong></p>
-        <p>不會。你的月薪、時間設定、計時資料和整蠱計數僅保存在裝置本機，用於 App 和小工具顯示。</p>
+  <h3>How do I hide earnings amounts on widgets?</h3>
+  <p>Open <strong>Settings</strong> and enable the option to hide amounts. This privacy option affects supported earnings displays without deleting your compensation settings.</p>
 
-        <p><strong>3. 為什麼工資進度和實際入帳不完全一致？</strong></p>
-        <p>App 會根據你輸入的月薪、每月計薪天數和工作時間進行估算，結果僅供視覺化參考，不代表真實工資發放紀錄。</p>
+  <h3>Where do I record my work mood?</h3>
+  <p>Work Mood check-ins are recorded from <strong>Today</strong>. Choose one of the six moods, select the work factor that influenced it, and optionally add a note. You can review and delete entries in Mood History.</p>
 
-        <p><strong>4. 之後會加入更多小工具皮膚嗎？</strong></p>
-        <p>我們計畫在後續版本加入更多可選的小工具樣式。核心工資進度功能會保持可用。</p>
-      </section>
+  <h3>Does the App upload or sync my information?</h3>
+  <p>No. The current version has no account or cloud sync. Compensation settings, schedules, mood records, notes, widget preferences, and supported selected images remain on your device. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
 
-      <section id="en" lang="en">
-        <h2>English</h2>
-        <p>If you have any issues while using Salary Motivation, or if you would like to share feedback, please contact us using the support email above.</p>
+  <h3>What happens if I remove a widget or delete the App?</h3>
+  <p>Removing a Home Screen widget does not delete the App’s settings or records. Deleting the App generally deletes its locally stored data. Because there is currently no cloud sync, deleted settings and mood history may not be recoverable after reinstalling.</p>
 
-        <h3>FAQ</h3>
-        <p><strong>1. What should I do if the widget does not refresh?</strong></p>
-        <p>Please open the app, check that your monthly salary, paid working days, and work hours are set correctly, then tap “Save and Refresh Widget.” If it still does not update, try removing the widget and adding it again.</p>
+  <h2>Contacting support</h2>
+  <p>To help us investigate an issue, include:</p>
+  <ul>
+    <li>your iPhone or iPad model and iOS version;</li>
+    <li>the App version;</li>
+    <li>the widget family and style involved;</li>
+    <li>the steps that led to the issue; and</li>
+    <li>a screenshot, if it does not reveal sensitive information.</li>
+  </ul>
+  <div class="notice" role="note">
+    <p><strong>Please protect your privacy:</strong> do not email your exact compensation, private mood notes, passwords, payment information, or other sensitive personal information. You may redact screenshots before sending them.</p>
+  </div>
 
-        <p><strong>2. Does the app upload my salary data?</strong></p>
-        <p>No. Your salary, time settings, timer records, and prank counters are stored only locally on your device for app and widget display.</p>
+  <h2>Compatibility and accessibility</h2>
+  <p>The current version supports iOS 17 and later and provides small and medium Home Screen widgets. If you encounter clipping, unreadable text, color-contrast problems, or another accessibility issue, please contact us with your device model, display settings, and a screenshot.</p>
 
-        <p><strong>3. Why does the salary progress not exactly match my actual paycheck?</strong></p>
-        <p>The app estimates salary progress based on the monthly salary, paid working days, and working hours you enter. The result is for visual reference and motivation only, and does not represent actual payroll records.</p>
+  <h2>Contact</h2>
+  <p><strong>My Workday: Pay Widget Support</strong><br>
+     Email: <a href="mailto:blakeroy@163.com">blakeroy@163.com</a></p>
 
-        <p><strong>4. Will more widget themes be added?</strong></p>
-        <p>We plan to add more optional widget styles in future versions. The core salary progress feature will remain available.</p>
-      </section>
-
-      <p class="footer"><a href="./privacy.html">Privacy Policy / 隐私政策</a> · <a href="./index.html">Home / 首页</a></p>
-    </article>
-  </main>
+  <footer>
+    <p>© 2026 My Workday: Pay Widget. This page does not use analytics scripts, advertising pixels, or cookies.</p>
+  </footer>
+</main>
 </body>
 </html>
