@@ -1,30 +1,9 @@
-# 薪动力 GitHub Pages
+# Website files for App Store submission
 
-这个文件夹包含 App Store Connect 可用的支持页面和隐私政策页面。
+Upload `privacy.html` and `support.html` to the existing GitHub Pages directory:
 
-简体中文产品名：薪动力
+`https://pimpim19979797.github.io/My-workday-pay-widget/`
 
-繁体中文产品名：薪動力
+Before submitting the build, confirm both public URLs return HTTP 200 and no longer mention photos, Live Activity, retired widgets, or historical product names.
 
-英文产品名：Salary Motivation
-
-页面已包含简体中文、繁體中文和 English 三个版本，适合 App Store 上架时填写支持 URL 和隐私政策 URL。
-
-建议创建 GitHub 仓库名：
-
-```text
-rixinyueyi
-```
-
-发布到 GitHub Pages 后，URL 通常是：
-
-```text
-https://pimpim19979797.github.io/rixinyueyi/support.html
-https://pimpim19979797.github.io/rixinyueyi/privacy.html
-```
-
-页面中的公开联系邮箱已设置为：
-
-```text
-blakeroy@163.com
-```
+These files match the shipping `My Workday: Pay Widget` binary: local-only compensation, schedule, widget preferences, and mood history; no account, advertising, analytics, tracking, photo access, or developer server upload.
